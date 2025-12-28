@@ -1,6 +1,7 @@
 package es.upm.grise.profundizacion2025;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +71,15 @@ public class ClaseExamenTest {
 		}catch(EntradaInvalida e) {
 			e.getMessage();
 		}
+	}
+	
+	@Test
+	public void entradaInvalida()  {
 		
+		
+		assertThrows(EntradaInvalida.class, () -> {
+	        ClaseExamen.primos(1);
+	    });
 
 	}
 }
